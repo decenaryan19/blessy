@@ -6,7 +6,6 @@
   <title>Richelle Blessy Baluca | US Bookkeeper & Senior Accountant</title>
   <meta name="description" content="Precision bookkeeping and financial growth strategy for US businesses. Hire Richelle Blessy Baluca — CPA Track Senior Accountant." />
 
-  <!-- Site icon (favicon) -->
   <link rel="icon" type="image/png" href="bootstrap-icon.png" />
   <link rel="shortcut icon" type="image/png" href="bootstrap-icon.png" />
   <link rel="apple-touch-icon" href="bootstrap-icon.png" />
@@ -17,16 +16,18 @@
       theme: {
         extend: {
           colors: {
-            ink:   { DEFAULT: '#1A1016', soft: '#241820', mid: '#2E2229', card: '#32262E' },
-            rose:  { DEFAULT: '#C9A08A', light: '#E8C4B0', soft: '#F3D9CC', deep: '#A67B66' },
-            blush: { DEFAULT: '#F7EDE8', soft: '#FFF8F5', muted: '#EAD5CC' },
-            pearl: { DEFAULT: '#FFF9F6', soft: '#F5EBE6' },
-            mauve: { DEFAULT: '#B08A9A', soft: '#D4B5C0' },
+            navy:  { DEFAULT: '#0B2C5C', soft: '#143A6E', deep: '#071E3D' },
+            leaf:  { DEFAULT: '#7CB518', bright: '#8BC34A', soft: '#A8D05F' },
+            mist:  { DEFAULT: '#F4F6F8', card: '#EEF1F4' },
+            ink:   { DEFAULT: '#1A2433', mute: '#5C6B7A' },
           },
           fontFamily: {
-            display: ['Cormorant Garamond', 'Playfair Display', 'serif'],
-            body:    ['Outfit', 'Inter', 'sans-serif'],
+            sans: ['Montserrat', 'Helvetica Neue', 'Arial', 'sans-serif'],
           },
+          borderRadius: {
+            '2xl': '1.25rem',
+            '3xl': '1.75rem',
+          }
         }
       }
     }
@@ -34,804 +35,761 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
   <style>
     :root {
-      --ink: #1A1016;
-      --ink-soft: #241820;
-      --ink-mid: #2E2229;
-      --rose: #C9A08A;
-      --rose-light: #E8C4B0;
-      --blush: #F7EDE8;
-      --pearl: #FFF9F6;
-      --mauve: #B08A9A;
+      --navy: #0B2C5C;
+      --leaf: #7CB518;
+      --grad: linear-gradient(90deg, #7CB518 0%, #0B2C5C 100%);
+      --grad-diag: linear-gradient(135deg, #0B2C5C 0%, #1a5a8a 45%, #7CB518 100%);
     }
 
     * { box-sizing: border-box; }
-
-    html.lenis, html.lenis body { height: auto; }
-    .lenis.lenis-smooth { scroll-behavior: auto !important; }
-    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-
     body {
-      background: var(--ink);
-      color: var(--blush);
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      color: #5C6B7A;
+      background: #fff;
       overflow-x: hidden;
     }
 
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--ink); }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, var(--rose-light), var(--mauve));
-      border-radius: 99px;
-    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F4F6F8; }
+    ::-webkit-scrollbar-thumb { background: #0B2C5C; border-radius: 3px; }
 
-    .text-rose-grad {
-      background: linear-gradient(135deg, #E8C4B0 0%, #C9A08A 45%, #B08A9A 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .nav-glass {
-      background: rgba(26, 16, 22, 0.72);
-      backdrop-filter: blur(18px) saturate(1.2);
-      -webkit-backdrop-filter: blur(18px) saturate(1.2);
-      border-bottom: 1px solid rgba(201, 160, 138, 0.12);
-    }
-
-    .btn-rose {
-      background: linear-gradient(135deg, #E8C4B0, #C9A08A 55%, #B08A9A);
-      color: #1A1016;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      transition: transform 0.35s cubic-bezier(.22,1,.36,1), box-shadow 0.35s;
-    }
-    .btn-rose:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 12px 40px rgba(201, 160, 138, 0.45);
-    }
-
-    .btn-ghost {
-      border: 1px solid rgba(232, 196, 176, 0.4);
-      color: #E8C4B0;
-      transition: background 0.3s, border-color 0.3s, transform 0.3s;
-    }
-    .btn-ghost:hover {
-      background: rgba(232, 196, 176, 0.1);
-      border-color: #E8C4B0;
-      transform: translateY(-2px);
-    }
-
-    .soft-card {
-      background: linear-gradient(160deg, rgba(50, 38, 46, 0.9) 0%, rgba(36, 24, 32, 0.95) 100%);
-      border: 1px solid rgba(201, 160, 138, 0.14);
-      transition: border-color 0.4s, transform 0.45s cubic-bezier(.22,1,.36,1), box-shadow 0.4s;
-    }
-    .soft-card:hover {
-      border-color: rgba(232, 196, 176, 0.45);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(176, 138, 154, 0.18);
-    }
-
-    .section-chip {
-      border: 1px solid rgba(232, 196, 176, 0.35);
-      background: rgba(232, 196, 176, 0.08);
-      color: #E8C4B0;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
-
-    .hero-glow {
-      box-shadow:
-        0 0 0 1.5px rgba(232, 196, 176, 0.45),
-        0 0 60px 10px rgba(201, 160, 138, 0.22),
-        0 25px 60px rgba(0, 0, 0, 0.4);
-    }
-
-    .metric-pill {
-      background: rgba(50, 38, 46, 0.75);
-      border: 1px solid rgba(232, 196, 176, 0.28);
-      backdrop-filter: blur(12px);
-    }
-
-    .rose-input:focus {
-      outline: none;
-      border-color: #C9A08A;
-      box-shadow: 0 0 0 3px rgba(201, 160, 138, 0.22);
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,160,138,0.45), transparent);
-    }
-
-    /* Ambient blobs */
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      pointer-events: none;
-    }
-
-    /* Progress bar */
-    #scrollProgress {
-      position: fixed;
-      top: 0; left: 0;
-      height: 2.5px;
-      width: 0%;
-      z-index: 100;
-      background: linear-gradient(90deg, #E8C4B0, #B08A9A, #C9A08A);
-      transition: width 0.05s linear;
-    }
-
-    /* Sticky scroll reveal (21st.dev / Aceternity style) */
-    .sticky-scroll-section {
-      position: relative;
-    }
-    .sticky-panel {
+    /* Header */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #E8ECF0;
       position: sticky;
       top: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
+      z-index: 50;
     }
-    .sticky-left {
-      flex: 1;
-      padding: 2rem;
-      max-height: 100vh;
-      overflow: hidden;
-    }
-    .sticky-right {
-      flex: 1;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
-    .sticky-visual {
-      width: 100%;
-      max-width: 420px;
-      aspect-ratio: 1;
-      border-radius: 1.75rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2.5rem;
-      opacity: 0;
-      transform: scale(0.92) translateY(20px);
-      transition: opacity 0.55s cubic-bezier(.22,1,.36,1), transform 0.55s cubic-bezier(.22,1,.36,1), background 0.6s;
-      border: 1px solid rgba(232, 196, 176, 0.25);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.35);
-      pointer-events: none;
-    }
-    .sticky-visual.active {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-      pointer-events: auto;
-    }
-    .sticky-item {
-      opacity: 0.5;
-      transform: translateY(16px);
-      transition: opacity 0.5s, transform 0.5s cubic-bezier(.22,1,.36,1);
-      padding: 1.75rem 0;
-      border-left: 2px solid rgba(201, 160, 138, 0.2);
-      padding-left: 1.5rem;
-      margin-left: 0.25rem;
-    }
-    .sticky-item.active {
-      opacity: 1;
-      transform: translateY(0);
-      border-left-color: #E8C4B0;
-    }
-    .sticky-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      color: #FFF9F6;
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-      line-height: 1.2;
-    }
-    .sticky-item .meta {
-      color: #E8C4B0;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-    .sticky-item .desc {
-      color: #E8DDD6;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 28rem;
-    }
-    .sticky-item .date-label {
-      color: #F3D9CC;
+    .nav-link {
+      color: #0B2C5C;
       font-size: 0.72rem;
-      letter-spacing: 0.18em;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
+      padding: 0.35rem 0;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
     }
-    .mobile-card {
-      display: none;
-    }
-
-    @media (max-width: 900px) {
-      .sticky-panel {
-        flex-direction: column;
-        height: auto;
-        position: relative;
-        top: auto;
-        padding: 0 0 2rem;
-        overflow: visible;
-        align-items: stretch;
-      }
-      .sticky-right { display: none !important; }
-      .sticky-left {
-        max-height: none;
-        overflow: visible;
-        padding: 0 0.25rem;
-      }
-      .sticky-item {
-        opacity: 1 !important;
-        transform: none !important;
-        border-left-color: #C9A08A;
-        padding: 0 0 1.5rem 1.15rem;
-        margin-bottom: 0.5rem;
-      }
-      .sticky-item h3 { font-size: 1.45rem; }
-      .mobile-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.35rem;
-        margin-top: 1rem;
-        padding: 1rem 1.15rem;
-        border-radius: 1.15rem;
-        border: 1px solid rgba(232, 196, 176, 0.28);
-        background: linear-gradient(145deg, rgba(58,42,50,0.95), rgba(26,16,22,0.98));
-      }
-      .mobile-card .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-        margin-top: 0.35rem;
-      }
-      .mobile-card .tag {
-        font-size: 10px;
-        padding: 0.25rem 0.65rem;
-        border-radius: 999px;
-        border: 1px solid rgba(232, 196, 176, 0.35);
-        color: #E8C4B0;
-      }
-      .hero-float-badges { display: none !important; }
-      .floaty { animation: none; }
-      section { padding-left: 1.15rem; padding-right: 1.15rem; }
-      .sticky-scroll-section .max-w-7xl { padding-top: 1.5rem; }
+    .nav-link:hover,
+    .nav-link.active {
+      border-bottom-color: #7CB518;
+      color: #0B2C5C;
     }
 
-    /* Reveal on scroll cards */
-    .reveal-up {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
+    .btn-grad {
+      background: var(--grad);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: opacity 0.2s, transform 0.2s;
     }
-    .reveal-up.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .btn-grad:hover { opacity: 0.92; transform: translateY(-1px); }
 
-    /* Floating trust ribbon */
-    .marquee {
+    .btn-navy {
+      background: #0B2C5C;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .btn-navy:hover { background: #143A6E; }
+
+    .btn-outline-navy {
+      border: 2px solid #0B2C5C;
+      color: #0B2C5C;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline-navy:hover { background: #0B2C5C; color: #fff; }
+
+    /* Split hero (layout like reference, A.M. Yu colors) */
+    .hero-split {
+      background: #fff;
+      padding: 3rem 0 2.5rem;
+    }
+    .hero-tag {
+      color: #7CB518;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .hero-title {
+      color: #0B2C5C;
+      font-weight: 300;
+      line-height: 1.15;
+      font-size: clamp(1.85rem, 4.2vw, 3.1rem);
+      margin-bottom: 1.25rem;
+    }
+    .hero-title strong {
+      font-weight: 800;
+      display: block;
+    }
+    .hero-frame {
+      border: 1px solid #E5EAF0;
+      background: #F4F6F8;
       overflow: hidden;
-      white-space: nowrap;
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      box-shadow: 0 16px 40px rgba(11, 44, 92, 0.08);
     }
-    .marquee-track {
+    .hero-caption {
+      background: #fff;
+      border-top: 1px solid #E5EAF0;
+      padding: 1rem 1.25rem;
+    }
+    .metric-box {
+      border: 1px solid #E5EAF0;
+      background: #fff;
+      text-align: center;
+      padding: 1.15rem 0.75rem;
+    }
+    .metric-box .num {
+      color: #0B2C5C;
+      font-size: 1.65rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .metric-box .lbl {
+      margin-top: 0.45rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7CB518;
+    }
+
+    .section-title {
+      color: #0B2C5C;
+      font-weight: 800;
+      font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .grad-bar {
+      background: var(--grad);
+      color: #fff;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1.1rem 1.5rem;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+    }
+
+    .icon-sq {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .icon-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 999px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin: 0 auto 0.65rem;
+    }
+    .icon-circle-sm {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      background: var(--grad);
       display: inline-flex;
-      gap: 3rem;
-      animation: marquee 28s linear infinite;
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      flex-shrink: 0;
     }
 
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .practice-card {
+      background: #EEF1F4;
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      height: 100%;
     }
-    .floaty { animation: floaty 5s ease-in-out infinite; }
-
-    @keyframes softPulse {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+    .practice-card h3 {
+      color: #0B2C5C;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 1rem 0 0.75rem;
+    }
+    .practice-card ul {
+      list-style: disc;
+      padding-left: 1.15rem;
+      margin: 0;
+    }
+    .practice-card li {
+      color: #5C6B7A;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0.3rem;
     }
 
-    .hire-badge {
-      background: linear-gradient(135deg, rgba(232,196,176,0.15), rgba(176,138,154,0.12));
-      border: 1px solid rgba(232,196,176,0.35);
+    .strategy-card {
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+    .strategy-card.green {
+      background: #7CB518;
+      color: #fff;
+    }
+    .strategy-card.gray {
+      background: #EEF1F4;
+      color: #0B2C5C;
+    }
+    .strategy-card h3 {
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .strategy-card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      opacity: 0.92;
     }
 
-    /* Scroll to top */
+    .industry-label {
+      color: #7CB518;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .team-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      border-radius: 999px;
+      position: relative;
+      margin-top: 4.5rem;
+    }
+    .team-bar.light {
+      background: #fff;
+      border: 2px solid #0B2C5C;
+      color: #0B2C5C;
+    }
+    .team-bar.dark {
+      background: #0B2C5C;
+      color: #fff;
+    }
+    .team-photo {
+      position: absolute;
+      left: 50%;
+      top: -64px;
+      transform: translateX(-50%);
+      width: 128px;
+      height: 128px;
+      border-radius: 999px;
+      object-fit: cover;
+      object-position: top;
+      border: 4px solid #fff;
+      box-shadow: 0 6px 18px rgba(11,44,92,0.22);
+    }
+
+    .form-input {
+      width: 100%;
+      border: 1px solid #D5DCE5;
+      background: #fff;
+      color: #1A2433;
+      padding: 0.85rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 0.5rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus { border-color: #7CB518; }
+    .form-input::placeholder { color: #9AA8B5; }
+
+    /* Scroll top — navy/green */
     #scrollTopBtn {
       position: fixed;
       right: 1.25rem;
       bottom: 1.5rem;
       z-index: 60;
-      width: 48px;
-      height: 48px;
+      width: 46px;
+      height: 46px;
       border-radius: 999px;
+      background: var(--grad);
+      color: #fff;
+      border: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #E8C4B0, #C9A08A 55%, #B08A9A);
-      color: #1A1016;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 10px 30px rgba(201, 160, 138, 0.4);
+      box-shadow: 0 6px 18px rgba(11,44,92,0.3);
       opacity: 0;
       visibility: hidden;
-      transform: translateY(12px);
-      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      transform: translateY(10px);
+      transition: opacity 0.25s, visibility 0.25s, transform 0.25s;
     }
     #scrollTopBtn.show {
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
     }
-    #scrollTopBtn:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 14px 36px rgba(201, 160, 138, 0.5);
+
+    /* Why Hire — About */
+    .why-hire {
+      position: relative;
+      overflow: hidden;
+      background: #F4F6F8;
+      border-radius: 1.75rem;
+      padding: 2.75rem 1.75rem 2.5rem;
+    }
+    .why-hire::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(244,246,248,0.9) 0%, rgba(244,246,248,0.86) 50%, rgba(244,246,248,0.92) 100%),
+        url('why-hire-bg.jpg') center / cover no-repeat;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+    .why-hire > * { position: relative; z-index: 1; }
+    .why-hire-title {
+      color: #0B2C5C;
+      font-weight: 400;
+      font-size: clamp(1.55rem, 3.2vw, 2.15rem);
+      letter-spacing: 0.02em;
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+    .why-hire-title strong {
+      font-weight: 800;
+    }
+    .why-hire-col h3 {
+      color: #0B2C5C;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      margin: 1rem 0 0.85rem;
+    }
+    .why-hire-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .why-hire-col li {
+      position: relative;
+      padding-left: 1.1rem;
+      color: #5C6B7A;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0.45rem;
+      font-weight: 500;
+    }
+    .why-hire-col li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 0.45rem;
+      height: 0.45rem;
+      background: #7CB518;
+      border-radius: 2px;
+    }
+    .why-hire-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      background: var(--grad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(11, 44, 92, 0.12);
+    }
+
+    @media (max-width: 768px) {
+      .hero-split { padding: 2rem 0 1.5rem; }
+      .team-bar { flex-direction: column; text-align: center; padding-top: 4.5rem; border-radius: 1.25rem; }
+      .team-photo { top: -72px; width: 120px; height: 120px; }
+      .why-hire { padding: 2.25rem 1.25rem 2rem; }
     }
   </style>
 </head>
 <body>
 
-<div id="scrollProgress"></div>
-
-<!-- ═══ NAV ═══ -->
-<header id="header" class="fixed top-0 left-0 right-0 z-50 nav-glass">
-  <nav class="max-w-7xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
-    <a href="#hero" class="font-display font-semibold tracking-wide">
-      <span class="text-pearl text-base md:text-lg">BLESSY</span>
-      <span class="text-rose-light/70 text-xs ml-2 hidden sm:inline font-body font-normal tracking-widest uppercase">· Senior Accountant</span>
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-3.5 flex items-center justify-between gap-4">
+    <a href="#about" class="flex items-center gap-2.5 min-w-0">
+      <img src="profile-pic.jpg" alt="" class="w-10 h-10 rounded-full object-cover object-top border-2 border-leaf flex-shrink-0" />
+      <div class="leading-tight min-w-0">
+        <div class="text-navy font-extrabold text-sm sm:text-base tracking-wide uppercase truncate">Richelle Baluca</div>
+        <div class="text-leaf text-[10px] font-semibold tracking-wider uppercase">CPA Track · Senior Accountant</div>
+      </div>
     </a>
 
-    <ul class="hidden lg:flex items-center gap-8 text-[11px] font-medium tracking-[0.18em] uppercase">
-      <li><a href="#story" class="text-pearl/70 hover:text-rose-light transition-colors">Story</a></li>
-      <li><a href="#expertise" class="text-pearl/70 hover:text-rose-light transition-colors">Expertise</a></li>
-      <li><a href="#journey" class="text-pearl/70 hover:text-rose-light transition-colors">Journey</a></li>
-      <li><a href="#industries" class="text-pearl/70 hover:text-rose-light transition-colors">Industries</a></li>
-      <li><a href="#contact" class="text-pearl/70 hover:text-rose-light transition-colors">Contact</a></li>
-    </ul>
+    <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
 
-    <a href="#contact" class="btn-rose hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-[11px] uppercase tracking-widest">
-      Hire Me
-      <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-    </a>
+    <a href="#contact" class="btn-navy hidden sm:inline-flex px-5 py-2.5">Hire Me</a>
 
-    <button id="menuBtn" class="lg:hidden text-blush" aria-label="Menu">
+    <button id="menuBtn" class="md:hidden text-navy p-1" aria-label="Menu">
       <i data-lucide="menu" class="w-6 h-6"></i>
     </button>
-  </nav>
-  <div id="mobileMenu" class="hidden lg:hidden border-t border-rose/10 px-6 pb-5 pt-3 space-y-3">
-    <a href="#story" class="block text-pearl/85 text-sm tracking-widest uppercase py-1" onclick="closeMobile()">Story</a>
-    <a href="#expertise" class="block text-pearl/85 text-sm tracking-widest uppercase py-1" onclick="closeMobile()">Expertise</a>
-    <a href="#journey" class="block text-pearl/85 text-sm tracking-widest uppercase py-1" onclick="closeMobile()">Journey</a>
-    <a href="#industries" class="block text-pearl/85 text-sm tracking-widest uppercase py-1" onclick="closeMobile()">Industries</a>
-    <a href="#contact" class="block text-pearl/85 text-sm tracking-widest uppercase py-1" onclick="closeMobile()">Contact</a>
-    <a href="#contact" class="btn-rose inline-flex px-5 py-2 rounded-full text-xs tracking-widest uppercase mt-2">Hire Me</a>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t border-mist px-5 py-4 space-y-3 bg-white">
+    <a href="#about" class="nav-link block" onclick="closeMobile()">About</a>
+    <a href="#experience" class="nav-link block" onclick="closeMobile()">Experience</a>
+    <a href="#contact" class="nav-link block" onclick="closeMobile()">Contact</a>
+    <a href="#contact" class="btn-navy inline-flex px-5 py-2.5 mt-1" onclick="closeMobile()">Hire Me</a>
   </div>
 </header>
 
 
-<!-- ═══ HERO — Hire-ready first impression ═══ -->
-<section id="hero" class="relative min-h-screen pt-28 pb-16 px-5 md:px-8 flex items-center overflow-hidden">
-  <div class="blob w-[520px] h-[520px] -top-40 -left-32 opacity-40" style="background:#B08A9A"></div>
-  <div class="blob w-[420px] h-[420px] bottom-0 right-0 opacity-30" style="background:#C9A08A"></div>
-  <div class="blob w-[280px] h-[280px] top-1/2 left-1/2 opacity-20" style="background:#E8C4B0"></div>
+<!-- ═══ ABOUT (merged home + about) ═══ -->
+<section id="about" class="hero-split px-5 md:px-8 pb-16 md:pb-20">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
 
-  <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
-
-    <!-- Left -->
-    <div>
-      <div data-aos="fade-up" class="hire-badge inline-flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-full mb-6 max-w-full">
-        <span class="w-2 h-2 rounded-full bg-rose-light flex-shrink-0" style="animation: softPulse 2s infinite"></span>
-        <span class="text-rose-light text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.16em] uppercase font-medium leading-snug">Open for remote · Ready to hire</span>
+      <!-- Left: copy -->
+      <div data-aos="fade-up">
+        <p class="hero-tag">Virtual Financial Services</p>
+        <h1 class="hero-title">
+          Take Control of Your
+          <strong>Business Finances</strong>
+          Without the Headache
+        </h1>
+        <p class="text-ink-mute text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+          Delegate your end-to-end bookkeeping, AR/AP, and financial reporting to a dedicated professional so you can focus on scaling your business.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-10 lg:mb-0">
+          <a href="#contact" class="btn-navy px-6 py-3 inline-flex items-center gap-2">
+            Get Started Today
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#experience" class="btn-outline-navy px-6 py-3 inline-flex">View Experience</a>
+        </div>
       </div>
 
-      <p data-aos="fade-up" data-aos-delay="60" class="font-display italic text-rose-light/80 text-xl md:text-2xl mb-3">
-        Meet Richelle Blessy Baluca
-      </p>
-
-      <h1 data-aos="fade-up" data-aos-delay="120"
-          class="font-display font-semibold leading-[1.08] mb-5 text-pearl"
-          style="font-size: clamp(2.4rem, 5vw, 4rem);">
-        The bookkeeper<br />
-        clients <span class="text-rose-grad italic">trust</span><br />
-        with every ledger.
-      </h1>
-
-      <p data-aos="fade-up" data-aos-delay="200" class="text-pearl/80 text-base md:text-lg leading-relaxed mb-8 max-w-lg font-light">
-        CPA Track Senior Accountant with 3+ years turning messy financials into
-        <span class="text-pearl font-medium">audit-ready clarity</span> — so US businesses grow with confidence.
-      </p>
-
-      <div data-aos="fade-up" data-aos-delay="280" class="flex flex-wrap gap-3 mb-10">
-        <a href="#contact" class="btn-rose px-7 py-3.5 rounded-full text-xs tracking-widest uppercase inline-flex items-center gap-2">
-          Schedule Consultation
-          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-        </a>
-        <a href="#journey" class="btn-ghost px-7 py-3.5 rounded-full text-xs tracking-widest uppercase">
-          See Her Journey
-        </a>
-      </div>
-
-      <!-- Trust strip -->
-      <div data-aos="fade-up" data-aos-delay="360" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="metric-pill rounded-2xl px-4 py-3">
-          <div class="font-display text-2xl text-rose-grad font-semibold">3+</div>
-          <div class="text-[10px] text-pearl/65 tracking-wide uppercase mt-0.5">Years Exp.</div>
-        </div>
-        <div class="metric-pill rounded-2xl px-4 py-3">
-          <div class="font-display text-2xl text-rose-grad font-semibold">100%</div>
-          <div class="text-[10px] text-pearl/65 tracking-wide uppercase mt-0.5">Accuracy Focus</div>
-        </div>
-        <div class="metric-pill rounded-2xl px-4 py-3">
-          <div class="font-display text-2xl text-rose-grad font-semibold">4+</div>
-          <div class="text-[10px] text-pearl/65 tracking-wide uppercase mt-0.5">Industries</div>
-        </div>
-        <div class="metric-pill rounded-2xl px-4 py-3">
-          <div class="font-display text-2xl text-rose-grad font-semibold">QBO</div>
-          <div class="text-[10px] text-pearl/65 tracking-wide uppercase mt-0.5">Expert Level</div>
+      <!-- Right: photo + caption -->
+      <div data-aos="fade-left" class="flex justify-center lg:justify-end">
+        <div class="hero-frame w-full max-w-[400px]">
+          <img src="hero-pic.jpg" alt="Richelle Blessy Baluca" class="w-full aspect-[4/5] object-cover object-center block" />
+          <div class="hero-caption">
+            <p class="text-navy font-extrabold text-lg leading-tight">Richelle Blessy Baluca</p>
+            <p class="text-leaf text-sm font-semibold mt-0.5">US Bookkeeper · Senior Accountant</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Right: portrait -->
-    <div data-aos="fade-left" data-aos-delay="150" class="relative flex justify-center lg:justify-end px-2 sm:px-0">
-      <div class="relative floaty w-full max-w-[360px] sm:max-w-[400px]">
-        <div class="hero-glow relative rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden w-full aspect-[4/5]">
-          <img src="hero-pic.jpg" alt="Richelle Blessy Baluca — Senior Accountant"
-               class="w-full h-full object-cover object-center" />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <p class="font-display text-pearl text-xl font-medium">Richelle Blessy Baluca</p>
-            <p class="text-rose-light text-sm">Bookkeeper · Senior Accountant</p>
-          </div>
-        </div>
+    <!-- Metric cards -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-10 md:mt-12">
+      <div class="metric-box" data-aos="fade-up">
+        <div class="num">3+</div>
+        <div class="lbl">Years Exp.</div>
+      </div>
+      <div class="metric-box" data-aos="fade-up" data-aos-delay="60">
+        <div class="num">100%</div>
+        <div class="lbl">Accuracy Focus</div>
+      </div>
+      <div class="metric-box" data-aos="fade-up" data-aos-delay="120">
+        <div class="num">4+</div>
+        <div class="lbl">Industries</div>
+      </div>
+      <div class="metric-box" data-aos="fade-up" data-aos-delay="180">
+        <div class="num">QBO</div>
+        <div class="lbl">Expert Level</div>
+      </div>
+    </div>
+  </div>
 
-        <div class="hero-float-badges absolute -left-4 top-16 metric-pill rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2.5">
-          <i data-lucide="badge-check" class="w-4 h-4 text-rose-light"></i>
+  <div class="max-w-3xl mx-auto text-center mt-16 md:mt-20 mb-12" data-aos="fade-up">
+    <h2 class="section-title mb-5">Who I Am</h2>
+    <p class="text-ink-mute text-base md:text-lg leading-relaxed">
+      I’m <strong class="text-navy">Richelle Blessy Baluca</strong>, a CPA Track Senior Accountant and US Bookkeeper with 3+ years of experience transforming complex financial ledgers into accurate, audit-ready accounts and scalable business insights for US clients.
+    </p>
+  </div>
+
+  <!-- Why Hire -->
+  <div class="max-w-6xl mx-auto" data-aos="fade-up">
+    <div class="why-hire">
+      <h3 class="why-hire-title">Why Hire <strong>Richelle</strong></h3>
+      <div class="grid md:grid-cols-3 gap-10 md:gap-8 max-w-5xl mx-auto">
+        <div class="why-hire-col">
+          <div class="why-hire-icon">
+            <i data-lucide="badge-check" class="w-6 h-6"></i>
+          </div>
+          <h3>Hire-ready from day one</h3>
+          <ul>
+            <li>Already managing US client ledgers</li>
+            <li>Bank &amp; credit card reconciliations</li>
+            <li>Month-end close packages</li>
+            <li>No long ramp-up needed</li>
+          </ul>
+        </div>
+        <div class="why-hire-col">
+          <div class="why-hire-icon">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3>Audit-minded accuracy</h3>
+          <ul>
+            <li>CPA-track discipline on every entry</li>
+            <li>Clean audit schedules &amp; docs</li>
+            <li>GAAP-aligned closing habits</li>
+            <li>100% reconciliation accuracy focus</li>
+          </ul>
+        </div>
+        <div class="why-hire-col">
+          <div class="why-hire-icon">
+            <i data-lucide="messages-square" class="w-6 h-6"></i>
+          </div>
+          <h3>Clear client communication</h3>
+          <ul>
+            <li>Primary client contact experience</li>
+            <li>Timely, professional updates</li>
+            <li>Calm, polished presence</li>
+            <li>Remote-ready collaboration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ EXPERIENCE (merged expertise + experience + industries) ═══ -->
+<section id="experience" class="bg-mist py-16 md:py-20 px-5 md:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="grad-bar rounded-full mb-12" data-aos="fade-up">
+      Experience
+    </div>
+
+    <!-- Professional Experience -->
+    <div class="max-w-3xl mx-auto space-y-10 mb-16 md:mb-20">
+      <div class="relative" data-aos="fade-up">
+        <div class="team-bar light">
+          <img src="profile-pic.jpg" alt="" class="team-photo" />
+          <div class="text-xs md:text-sm font-bold uppercase tracking-wide pt-2 md:pt-0 md:w-[38%]">US Bookkeeper &amp; Senior Accountant</div>
+          <div class="text-sm md:text-base font-extrabold md:w-[38%] md:text-right">A.M Yu &amp; Associates, CPAs</div>
+        </div>
+        <div class="mt-4 px-2 text-sm leading-relaxed text-ink-mute">
+          <span class="text-leaf font-bold text-xs tracking-widest uppercase">2024 — 2026 · Current</span>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Reconciled bank statements and managed multi-client general ledgers</li>
+            <li>Served as primary client contact for reporting and deliverables</li>
+            <li>Prepared month-end close packages, statements, and audit schedules</li>
+            <li>Managed AP/AR workflows and timely invoice processing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="relative" data-aos="fade-up" data-aos-delay="80">
+        <div class="team-bar dark">
+          <div class="absolute left-1/2 -translate-x-1/2 -top-16 w-28 h-28 rounded-full bg-leaf flex items-center justify-center border-[4px] border-white shadow-md">
+            <i data-lucide="search-check" class="w-12 h-12 text-white"></i>
+          </div>
+          <div class="text-sm md:text-base font-extrabold pt-10 md:pt-0 md:w-[38%]">OSG Global Consulting Inc.</div>
+          <div class="text-xs md:text-sm font-bold uppercase tracking-wide md:w-[38%] md:text-right">Junior Audit Associate</div>
+        </div>
+        <div class="mt-4 px-2 text-sm leading-relaxed text-ink-mute">
+          <span class="text-leaf font-bold text-xs tracking-widest uppercase">2023 — 2024</span>
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Executed end-to-end bookkeeping across diverse client portfolios</li>
+            <li>Processed payroll with regulatory compliance in mind</li>
+            <li>Monitored monthly accruals and assisted with financial close</li>
+            <li>Supported senior auditors in field audits and documentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="grid sm:grid-cols-2 gap-4 pt-4" data-aos="fade-up">
+        <div class="practice-card flex gap-4 items-start bg-white">
+          <div class="icon-sq"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div>
           <div>
-            <div class="text-pearl text-xs font-semibold">CPA Track</div>
-            <div class="text-pearl/70 text-[10px]">Accountancy Grad</div>
+            <div class="text-leaf text-[10px] font-bold tracking-widest uppercase mb-1">Bachelor of Science</div>
+            <div class="text-navy font-extrabold uppercase text-sm">BS Accountancy</div>
+            <div class="text-ink-mute text-sm mt-0.5">Quezon City University</div>
           </div>
         </div>
-
-        <div class="hero-float-badges absolute -right-3 bottom-28 metric-pill rounded-2xl px-4 py-3 shadow-lg flex items-center gap-2.5">
-          <i data-lucide="heart-handshake" class="w-4 h-4 text-mauve"></i>
+        <div class="practice-card flex gap-4 items-start bg-white">
+          <div class="icon-sq"><i data-lucide="school" class="w-5 h-5"></i></div>
           <div>
-            <div class="text-pearl text-xs font-semibold">Client-first</div>
-            <div class="text-pearl/70 text-[10px]">Primary contact</div>
+            <div class="text-leaf text-[10px] font-bold tracking-widest uppercase mb-1">Senior High School</div>
+            <div class="text-navy font-extrabold uppercase text-sm">ABM Strand</div>
+            <div class="text-ink-mute text-sm mt-0.5">Our Lady of Fatima University</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-
-<!-- Trust marquee -->
-<div id="story" class="py-6 border-y border-rose/10 bg-ink-soft/50">
-  <div class="marquee">
-    <div class="marquee-track text-pearl/50 text-xs tracking-[0.25em] uppercase font-medium">
-      <span>QuickBooks Online Expert</span><span class="text-rose">✦</span>
-      <span>Bank Reconciliation</span><span class="text-rose">✦</span>
-      <span>Month-End Closing</span><span class="text-rose">✦</span>
-      <span>AP / AR Management</span><span class="text-rose">✦</span>
-      <span>Financial Reporting</span><span class="text-rose">✦</span>
-      <span>Audit Schedules</span><span class="text-rose">✦</span>
-      <span>US Client Experience</span><span class="text-rose">✦</span>
-      <span>QuickBooks Online Expert</span><span class="text-rose">✦</span>
-      <span>Bank Reconciliation</span><span class="text-rose">✦</span>
-      <span>Month-End Closing</span><span class="text-rose">✦</span>
-      <span>AP / AR Management</span><span class="text-rose">✦</span>
-      <span>Financial Reporting</span><span class="text-rose">✦</span>
-      <span>Audit Schedules</span><span class="text-rose">✦</span>
-      <span>US Client Experience</span><span class="text-rose">✦</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- ═══ WHY HIRE HER ═══ -->
-<section class="py-24 px-5 md:px-8 relative overflow-hidden">
-  <div class="blob w-[400px] h-[400px] top-0 right-0 opacity-25" style="background:#B08A9A"></div>
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-14">
-      <span data-aos="fade-up" class="section-chip px-4 py-1.5 rounded-full inline-block mb-5">Why hire Blessy</span>
-      <h2 data-aos="fade-up" data-aos-delay="80" class="font-display font-semibold text-4xl md:text-5xl text-pearl mb-4">
-        Soft presence. <span class="text-rose-grad italic">Sharp numbers.</span>
-      </h2>
-      <p data-aos="fade-up" data-aos-delay="140" class="text-pearl/75 max-w-xl mx-auto">
-        The rare mix of polished communication and meticulous bookkeeping — built for founders who want calm, clean books.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div data-aos="fade-up" class="soft-card rounded-3xl p-8">
-        <div class="w-12 h-12 rounded-2xl bg-rose/10 flex items-center justify-center mb-5">
-          <i data-lucide="sparkle" class="w-5 h-5 text-rose-light"></i>
-        </div>
-        <h3 class="font-display text-2xl text-pearl mb-3">Hire-ready from day one</h3>
-        <p class="text-pearl/70 text-sm leading-relaxed">Already managing US client ledgers, reconciliations, and month-end closes — no long ramp-up needed.</p>
+    <!-- Areas of Practice -->
+    <h2 class="section-title text-center mb-10" data-aos="fade-up">Areas of Practice</h2>
+    <div class="grid sm:grid-cols-2 gap-5 md:gap-6 mb-14">
+      <div class="practice-card" data-aos="fade-up">
+        <div class="icon-sq"><i data-lucide="book-open" class="w-5 h-5"></i></div>
+        <h3>QuickBooks &amp; Bookkeeping</h3>
+        <ul>
+          <li>Full-cycle QuickBooks Online management</li>
+          <li>Chart of accounts structuring</li>
+          <li>Day-to-day ledger maintenance</li>
+          <li>Journal entries &amp; adjustments</li>
+        </ul>
       </div>
-      <div data-aos="fade-up" data-aos-delay="100" class="soft-card rounded-3xl p-8">
-        <div class="w-12 h-12 rounded-2xl bg-mauve/15 flex items-center justify-center mb-5">
-          <i data-lucide="shield-check" class="w-5 h-5 text-mauve"></i>
-        </div>
-        <h3 class="font-display text-2xl text-pearl mb-3">Audit-minded accuracy</h3>
-        <p class="text-pearl/70 text-sm leading-relaxed">Every entry, schedule, and statement is prepared with CPA-track discipline and clean documentation.</p>
+      <div class="practice-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="icon-sq"><i data-lucide="landmark" class="w-5 h-5"></i></div>
+        <h3>Reconciliation &amp; Controls</h3>
+        <ul>
+          <li>Bank &amp; credit card reconciliation</li>
+          <li>Clear audit trails</li>
+          <li>Discrepancy investigation</li>
+          <li>100% accuracy focus</li>
+        </ul>
       </div>
-      <div data-aos="fade-up" data-aos-delay="200" class="soft-card rounded-3xl p-8">
-        <div class="w-12 h-12 rounded-2xl bg-rose/10 flex items-center justify-center mb-5">
-          <i data-lucide="message-circle-heart" class="w-5 h-5 text-rose-light"></i>
-        </div>
-        <h3 class="font-display text-2xl text-pearl mb-3">Warm client energy</h3>
-        <p class="text-pearl/70 text-sm leading-relaxed">Primary client contact experience — clear updates, calm communication, and professional presence.</p>
+      <div class="practice-card" data-aos="fade-up" data-aos-delay="40">
+        <div class="icon-sq"><i data-lucide="arrow-left-right" class="w-5 h-5"></i></div>
+        <h3>AP / AR Management</h3>
+        <ul>
+          <li>Full-cycle payables &amp; receivables</li>
+          <li>Aging reports &amp; collections support</li>
+          <li>Vendor &amp; client invoice processing</li>
+          <li>Cash flow clarity</li>
+        </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ STICKY SCROLL REVEAL (21st.dev style) ═══ -->
-<section id="journey" class="sticky-scroll-section bg-ink-soft">
-  <div class="max-w-7xl mx-auto px-5 md:px-8 pt-20">
-    <div class="text-center mb-6 md:mb-0 md:absolute md:left-0 md:right-0 md:top-16 z-20 pointer-events-none px-4">
-      <span class="section-chip px-4 py-1.5 rounded-full inline-block mb-3 pointer-events-auto">Chapter · Career Storyline</span>
-      <h2 class="font-display font-semibold text-3xl md:text-4xl text-pearl pointer-events-auto">
-        Scroll her <span class="text-rose-grad italic">story</span>
-      </h2>
-    </div>
-  </div>
-
-  <div class="sticky-panel max-w-7xl mx-auto">
-    <!-- Left text items -->
-    <div class="sticky-left" id="stickyLeft">
-      <div class="h-[18vh] hidden md:block"></div>
-
-      <div class="sticky-item" data-index="0">
-        <p class="date-label">2024 — 2026</p>
-        <h3>US Bookkeeper & Senior Accountant</h3>
-        <p class="meta">A.M Yu & Associates, CPAs</p>
-        <p class="desc">Reconciles bank statements, manages ledgers, prepares audit schedules, and serves as primary client contact — the calm, reliable face of the books.</p>
-        <div class="mobile-card">
-          <span class="text-rose-light text-sm font-medium">A.M Yu & Associates</span>
-          <span class="text-pearl/80 text-xs">Senior Accountant · US Books</span>
-          <div class="tags"><span class="tag">Reconciliation</span><span class="tag">Client Contact</span></div>
-        </div>
-      </div>
-
-      <div class="sticky-item" data-index="1">
-        <p class="date-label">2023 — 2024</p>
-        <h3>Junior Audit Associate</h3>
-        <p class="meta">OSG Global Consulting Inc.</p>
-        <p class="desc">End-to-end bookkeeping, payroll processing, and monthly accruals monitoring — building the foundation of audit-ready discipline.</p>
-        <div class="mobile-card">
-          <span class="text-rose-light text-sm font-medium">OSG Global</span>
-          <span class="text-pearl/80 text-xs">Junior Audit Associate</span>
-          <div class="tags"><span class="tag">Payroll</span><span class="tag">Accruals</span></div>
-        </div>
-      </div>
-
-      <div class="sticky-item" data-index="2">
-        <p class="date-label">Education</p>
-        <h3>BS Accountancy · ABM</h3>
-        <p class="meta">Quezon City University · Our Lady of Fatima University</p>
-        <p class="desc">Strong academic roots in accountancy and business management — the quiet confidence behind every clean close.</p>
-        <div class="mobile-card">
-          <span class="text-rose-light text-sm font-medium">Academic Roots</span>
-          <span class="text-pearl/80 text-xs">BS Accountancy · QCU · ABM · OLFU</span>
-        </div>
-      </div>
-      <br>
-      <br>
-      <div class="sticky-item" data-index="3">
-        <p class="date-label">What you get</p>
-        <h3>A partner, not just a processor</h3>
-        <p class="desc">QuickBooks expertise, month-end mastery, and polished communication — ready to protect your numbers and free your focus.</p>
-        <div class="mobile-card">
-          <span class="text-rose-light text-sm font-medium">Ready to hire</span>
-          <span class="text-pearl/80 text-xs">Let’s grow your books together</span>
-          <a href="#contact" class="btn-rose mt-2 px-4 py-2 rounded-full text-[10px] uppercase tracking-widest inline-flex">Get in touch</a>
-        </div>
-      </div>
-
-      <div class="h-[30vh] hidden md:block"></div>
-    </div>
-
-    <!-- Right sticky visual -->
-    <div class="sticky-right">
-      <div class="relative w-full max-w-[420px] aspect-square">
-        <div class="sticky-visual absolute inset-0 active" id="vis0"
-             style="background: linear-gradient(145deg, #3A2A32, #1A1016);">
-          <i data-lucide="briefcase" class="w-14 h-14 text-rose-light mb-5"></i>
-          <p class="font-display text-2xl text-pearl">A.M Yu & Associates</p>
-          <p class="text-pearl/75 text-sm mt-2">Senior Accountant · US Books</p>
-          <div class="mt-6 flex gap-2 flex-wrap justify-center">
-            <span class="text-[10px] px-3 py-1 rounded-full border border-rose/30 text-rose-light">Reconciliation</span>
-            <span class="text-[10px] px-3 py-1 rounded-full border border-rose/30 text-rose-light">Client Contact</span>
-          </div>
-        </div>
-        <div class="sticky-visual absolute inset-0" id="vis1"
-             style="background: linear-gradient(145deg, #3D2C38, #1A1016);">
-          <i data-lucide="search-check" class="w-14 h-14 text-mauve mb-5"></i>
-          <p class="font-display text-2xl text-pearl">OSG Global</p>
-          <p class="text-pearl/75 text-sm mt-2">Junior Audit Associate</p>
-          <div class="mt-6 flex gap-2 flex-wrap justify-center">
-            <span class="text-[10px] px-3 py-1 rounded-full border border-mauve/40 text-mauve">Payroll</span>
-            <span class="text-[10px] px-3 py-1 rounded-full border border-mauve/40 text-mauve">Accruals</span>
-          </div>
-        </div>
-        <div class="sticky-visual absolute inset-0" id="vis2"
-             style="background: linear-gradient(145deg, #3A2830, #1A1016);">
-          <i data-lucide="graduation-cap" class="w-14 h-14 text-rose-light mb-5"></i>
-          <p class="font-display text-2xl text-pearl">Academic Roots</p>
-          <p class="text-pearl/75 text-sm mt-2 px-4">BS Accountancy · QCU<br/>ABM · OLFU</p>
-        </div>
-        <div class="sticky-visual absolute inset-0" id="vis3"
-             style="background: linear-gradient(145deg, #4A3040, #1A1016);">
-          <img src="profile-pic.jpg" alt="Richelle" class="w-28 h-28 rounded-full object-cover object-top mb-4 border-2 border-rose-light/50" />
-          <p class="font-display text-2xl text-pearl">Ready to hire</p>
-          <p class="text-pearl/75 text-sm mt-2">Let’s grow your books together</p>
-          <a href="#contact" class="btn-rose mt-5 px-5 py-2 rounded-full text-[10px] uppercase tracking-widest">Get in touch</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══ EXPERTISE ═══ -->
-<section id="expertise" class="py-24 px-5 md:px-8 relative overflow-hidden">
-  <div class="blob w-[360px] h-[360px] bottom-0 left-0 opacity-25" style="background:#C9A08A"></div>
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-14">
-      <span data-aos="fade-up" class="section-chip px-4 py-1.5 rounded-full inline-block mb-5">Expertise & Tools</span>
-      <h2 data-aos="fade-up" data-aos-delay="80" class="font-display font-semibold text-4xl md:text-5xl text-pearl mb-4">
-        Skills that make <span class="text-rose-grad italic">hiring easy</span>
-      </h2>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
-      <div data-aos="fade-up" class="soft-card rounded-2xl p-6">
-        <i data-lucide="book-open" class="w-5 h-5 text-rose-light mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">QuickBooks Online</h3>
-        <p class="text-pearl/70 text-sm">Full-cycle QBO expert</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="60" class="soft-card rounded-2xl p-6">
-        <i data-lucide="landmark" class="w-5 h-5 text-rose-light mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">Bank & CC Recon</h3>
-        <p class="text-pearl/70 text-sm">Zero-error reconciliation</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="120" class="soft-card rounded-2xl p-6">
-        <i data-lucide="arrow-left-right" class="w-5 h-5 text-mauve mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">AP / AR Management</h3>
-        <p class="text-pearl/70 text-sm">Aging & cash flow clarity</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="180" class="soft-card rounded-2xl p-6">
-        <i data-lucide="calendar-check" class="w-5 h-5 text-mauve mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">Month-End Closing</h3>
-        <p class="text-pearl/70 text-sm">Timely, clean closes</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="80" class="soft-card rounded-2xl p-6">
-        <i data-lucide="pen-line" class="w-5 h-5 text-rose-light mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">Journal Entries</h3>
-        <p class="text-pearl/70 text-sm">Adjusting & corrections</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="140" class="soft-card rounded-2xl p-6">
-        <i data-lucide="clipboard-list" class="w-5 h-5 text-rose-light mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">Audit Schedules</h3>
-        <p class="text-pearl/70 text-sm">CPA-ready support packs</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="200" class="soft-card rounded-2xl p-6">
-        <i data-lucide="bar-chart-2" class="w-5 h-5 text-mauve mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">Financial Reporting</h3>
-        <p class="text-pearl/70 text-sm">P&L, BS, Cash Flow</p>
-      </div>
-      <div data-aos="fade-up" data-aos-delay="260" class="soft-card rounded-2xl p-6">
-        <i data-lucide="users" class="w-5 h-5 text-mauve mb-4"></i>
-        <h3 class="text-pearl font-medium mb-1">Client Communication</h3>
-        <p class="text-pearl/70 text-sm">Warm & professional</p>
+      <div class="practice-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="icon-sq"><i data-lucide="bar-chart-2" class="w-5 h-5"></i></div>
+        <h3>Closing &amp; Reporting</h3>
+        <ul>
+          <li>Month-end closing procedures</li>
+          <li>P&amp;L, Balance Sheet, Cash Flow</li>
+          <li>Audit schedules for CPA review</li>
+          <li>Executive-ready insights</li>
+        </ul>
       </div>
     </div>
 
-    <div data-aos="fade-up" class="flex flex-wrap justify-center gap-3">
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="calculator" class="w-4 h-4 text-rose-light"></i> QuickBooks
+    <!-- Strategies -->
+    <h2 class="section-title text-center mb-8" data-aos="fade-up">My Strategies</h2>
+    <div class="max-w-3xl mx-auto space-y-4">
+      <div class="strategy-card green" data-aos="fade-up">
+        <i data-lucide="badge-check" class="w-8 h-8 flex-shrink-0 text-white"></i>
+        <div>
+          <h3>Hire-Ready from Day One</h3>
+          <p>Already managing US client ledgers, reconciliations, and month-end closes — no long ramp-up needed.</p>
+        </div>
+      </div>
+      <div class="strategy-card gray" data-aos="fade-up" data-aos-delay="60">
+        <i data-lucide="shield-check" class="w-8 h-8 flex-shrink-0 text-leaf"></i>
+        <div>
+          <h3>Audit-Minded Accuracy</h3>
+          <p>Every entry, schedule, and statement is prepared with CPA-track discipline and clean documentation.</p>
+        </div>
+      </div>
+      <div class="strategy-card green" data-aos="fade-up" data-aos-delay="40">
+        <i data-lucide="messages-square" class="w-8 h-8 flex-shrink-0 text-white"></i>
+        <div>
+          <h3>Clear Client Communication</h3>
+          <p>Primary client contact experience — timely updates, calm presence, remote-ready collaboration.</p>
+        </div>
+      </div>
+      <div class="strategy-card gray" data-aos="fade-up" data-aos-delay="80">
+        <i data-lucide="trending-up" class="w-8 h-8 flex-shrink-0 text-leaf"></i>
+        <div>
+          <h3>Growth-Focused Books</h3>
+          <p>Financials that don’t just close cleanly — they give founders the clarity to scale with confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <h3 class="section-title text-center text-base mt-14 mb-6" data-aos="fade-up">Tools &amp; Platforms</h3>
+    <div class="flex flex-wrap justify-center gap-3 mb-16 md:mb-20" data-aos="fade-up">
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="calculator" class="w-4 h-4 text-leaf"></i> QuickBooks
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="table" class="w-4 h-4 text-rose-light"></i> MS Excel
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="table" class="w-4 h-4 text-leaf"></i> MS Excel
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="mail" class="w-4 h-4 text-rose-light"></i> Google Suite
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="mail" class="w-4 h-4 text-leaf"></i> Google Suite
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="message-square" class="w-4 h-4 text-rose-light"></i> Slack
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="message-square" class="w-4 h-4 text-leaf"></i> Slack
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="trello" class="w-4 h-4 text-rose-light"></i> Trello
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="trello" class="w-4 h-4 text-leaf"></i> Trello
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="image" class="w-4 h-4 text-rose-light"></i> Canva
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="image" class="w-4 h-4 text-leaf"></i> Canva
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <img src="bootstrap-icon.png" alt="Bootstrap" class="w-4 h-4 rounded-[3px] object-cover" /> Bootstrap
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <img src="bootstrap-icon.png" alt="" class="w-4 h-4 rounded-sm object-cover" /> Bootstrap
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="bot" class="w-4 h-4 text-rose-light"></i> ChatGPT
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="bot" class="w-4 h-4 text-leaf"></i> ChatGPT
       </span>
-      <span class="px-5 py-2.5 rounded-full border border-rose/25 text-pearl/80 text-sm bg-rose/5 inline-flex items-center gap-2">
-        <i data-lucide="sparkles" class="w-4 h-4 text-rose-light"></i> Claude
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="sparkles" class="w-4 h-4 text-leaf"></i> Claude
       </span>
     </div>
-  </div>
-</section>
 
-
-<!-- ═══ INDUSTRIES ═══ -->
-<section id="industries" class="py-24 px-5 md:px-8 bg-ink-soft relative overflow-hidden">
-  <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-14">
-      <span data-aos="fade-up" class="section-chip px-4 py-1.5 rounded-full inline-block mb-5">Industries</span>
-      <h2 data-aos="fade-up" data-aos-delay="80" class="font-display font-semibold text-4xl md:text-5xl text-pearl">
-        Sectors she <span class="text-rose-grad italic">already knows</span>
-      </h2>
-    </div>
-
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div data-aos="fade-up" class="soft-card rounded-3xl p-8 text-center">
-        <div class="w-14 h-14 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-rose/10">
-          <i data-lucide="building-2" class="w-7 h-7 text-rose-light"></i>
-        </div>
-        <h3 class="font-display text-xl text-pearl mb-2">Real Estate</h3>
-        <p class="text-pearl/70 text-sm">Rentals, depreciation & investor-ready books</p>
+    <!-- Industries -->
+    <h2 class="section-title text-center mb-4" data-aos="fade-up">Industries</h2>
+    <p class="text-center text-ink-mute max-w-2xl mx-auto mb-12 text-sm md:text-base leading-relaxed" data-aos="fade-up">
+      Delivering precision financial management across diverse sectors with industry-specific bookkeeping expertise.
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-10 max-w-3xl mx-auto">
+      <div class="text-center" data-aos="fade-up">
+        <div class="icon-circle"><i data-lucide="building-2" class="w-8 h-8"></i></div>
+        <div class="industry-label">Real Estate</div>
       </div>
-      <div data-aos="fade-up" data-aos-delay="80" class="soft-card rounded-3xl p-8 text-center">
-        <div class="w-14 h-14 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-mauve/15">
-          <i data-lucide="factory" class="w-7 h-7 text-mauve"></i>
-        </div>
-        <h3 class="font-display text-xl text-pearl mb-2">Manufacturing</h3>
-        <p class="text-pearl/70 text-sm">COGS, inventory & production costs</p>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="60">
+        <div class="icon-circle"><i data-lucide="factory" class="w-8 h-8"></i></div>
+        <div class="industry-label">Manufacturing</div>
       </div>
-      <div data-aos="fade-up" data-aos-delay="160" class="soft-card rounded-3xl p-8 text-center">
-        <div class="w-14 h-14 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-rose/10">
-          <i data-lucide="briefcase" class="w-7 h-7 text-rose-light"></i>
-        </div>
-        <h3 class="font-display text-xl text-pearl mb-2">Services</h3>
-        <p class="text-pearl/70 text-sm">Billing, retainers & project revenue</p>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="120">
+        <div class="icon-circle"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
+        <div class="industry-label">Services</div>
       </div>
-      <div data-aos="fade-up" data-aos-delay="240" class="soft-card rounded-3xl p-8 text-center">
-        <div class="w-14 h-14 rounded-2xl mx-auto mb-5 flex items-center justify-center bg-mauve/15">
-          <i data-lucide="heart-handshake" class="w-7 h-7 text-mauve"></i>
-        </div>
-        <h3 class="font-display text-xl text-pearl mb-2">Non-Profit</h3>
-        <p class="text-pearl/70 text-sm">Fund accounting & grant tracking</p>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="180">
+        <div class="icon-circle"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
+        <div class="industry-label">Non-Profit</div>
       </div>
     </div>
   </div>
@@ -839,144 +797,151 @@
 
 
 <!-- ═══ CONTACT ═══ -->
-<section id="contact" class="py-24 px-5 md:px-8 relative overflow-hidden">
-  <div class="blob w-[480px] h-[480px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" style="background:#B08A9A"></div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-14">
-      <span data-aos="fade-up" class="section-chip px-4 py-1.5 rounded-full inline-block mb-5">Let’s connect</span>
-      <h2 data-aos="fade-up" data-aos-delay="80" class="font-display font-semibold text-4xl md:text-5xl text-pearl mb-4">
-        Ready to <span class="text-rose-grad italic">hire her?</span>
+<section id="contact" class="bg-white">
+  <!-- Contact hero strip -->
+  <div class="relative overflow-hidden" style="min-height: 220px;">
+    <div class="absolute inset-0" style="background: url('contact-bg.jpg') center / cover no-repeat;"></div>
+    <div class="absolute inset-0" style="background: var(--grad-diag); opacity: 0.82;"></div>
+    <div class="relative max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-20">
+      <h2 class="text-white font-extrabold uppercase tracking-wide text-3xl md:text-4xl" data-aos="fade-up">
+        Send Us a Message
       </h2>
-      <p data-aos="fade-up" data-aos-delay="140" class="text-pearl/75 max-w-md mx-auto">
-        One message away from cleaner books and a calmer financial month-end.
-      </p>
     </div>
+  </div>
 
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-      <!-- Left -->
-      <div data-aos="fade-right" class="space-y-5">
-        <div class="flex items-center gap-4 sm:gap-5 mb-2">
-          <div class="hero-glow w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden flex-shrink-0">
-            <img src="profile-pic.jpg" alt="Richelle Blessy Baluca" class="w-full h-full object-cover object-top" />
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-14 md:py-16">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+      <!-- Left contact info -->
+      <div data-aos="fade-right">
+        <h3 class="text-navy font-extrabold text-xl uppercase tracking-wide mb-6">Richelle Blessy Baluca</h3>
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <span class="icon-circle-sm"><i data-lucide="map-pin" class="w-4 h-4"></i></span>
+            <div>
+              <div class="text-navy font-bold text-sm uppercase tracking-wide">Location</div>
+              <div class="text-ink-mute text-sm mt-0.5">Quezon City, Philippines · Available for Remote US</div>
+            </div>
           </div>
-          <div class="min-w-0">
-            <h3 class="font-display text-xl sm:text-2xl text-pearl font-semibold leading-tight">Richelle Blessy Baluca</h3>
-            <p class="text-rose-light text-sm">CPA Track · Senior Accountant</p>
-            <p class="text-pearl/65 text-xs mt-1 flex items-start gap-1">
-              <i data-lucide="map-pin" class="w-3 h-3 mt-0.5 flex-shrink-0"></i>
-              <span>Quezon City, Philippines · Remote US</span>
-            </p>
-          </div>
+          <a href="https://wa.me/639623971104" target="_blank" rel="noopener noreferrer" class="flex items-start gap-4 group cursor-pointer">
+            <span class="icon-circle-sm"><i data-lucide="phone" class="w-4 h-4"></i></span>
+            <div>
+              <div class="text-navy font-bold text-sm uppercase tracking-wide">WhatsApp</div>
+              <div class="text-ink-mute text-sm mt-0.5 underline decoration-leaf underline-offset-2 group-hover:text-navy">+63-962-3971104</div>
+            </div>
+          </a>
+          <a href="mailto:richelleblessybaluca0919@gmail.com" class="flex items-start gap-4 group">
+            <span class="icon-circle-sm"><i data-lucide="mail" class="w-4 h-4"></i></span>
+            <div>
+              <div class="text-navy font-bold text-sm uppercase tracking-wide">Email</div>
+              <div class="text-ink-mute text-sm mt-0.5 break-all underline decoration-leaf underline-offset-2 group-hover:text-navy">richelleblessybaluca0919@gmail.com</div>
+            </div>
+          </a>
         </div>
 
-        <a href="mailto:richelleblessybaluca0919@gmail.com" class="soft-card rounded-2xl px-5 sm:px-6 py-5 flex items-center gap-4 block">
-          <div class="w-11 h-11 rounded-xl bg-rose/10 flex items-center justify-center flex-shrink-0">
-            <i data-lucide="mail" class="w-5 h-5 text-rose-light"></i>
-          </div>
-          <div class="min-w-0">
-            <div class="text-pearl/60 text-[10px] uppercase tracking-widest">Email</div>
-            <div class="text-pearl text-sm break-all">richelleblessybaluca0919@gmail.com</div>
-          </div>
-        </a>
+        <h4 class="text-navy font-extrabold text-sm uppercase tracking-wide mt-10 mb-4">Follow Us On</h4>
+        <div class="flex gap-3">
+          <a href="mailto:richelleblessybaluca0919@gmail.com" class="icon-circle-sm" aria-label="Email"><i data-lucide="mail" class="w-4 h-4"></i></a>
+          <a href="https://wa.me/639623971104" target="_blank" rel="noopener noreferrer" class="icon-circle-sm" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+          <a href="#contact" class="icon-circle-sm" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
 
-        <a href="https://wa.me/639623971104" target="_blank" rel="noopener noreferrer"
-           class="soft-card rounded-2xl px-5 sm:px-6 py-5 flex items-center gap-4 block relative z-10 cursor-pointer">
-          <div class="w-11 h-11 rounded-xl bg-rose/10 flex items-center justify-center flex-shrink-0">
-            <i data-lucide="message-circle" class="w-5 h-5 text-rose-light"></i>
-          </div>
+        <div class="mt-8 flex items-center gap-3 bg-mist rounded-2xl p-4">
+          <span class="w-2.5 h-2.5 rounded-full bg-leaf flex-shrink-0"></span>
           <div>
-            <div class="text-pearl/60 text-[10px] uppercase tracking-widest">WhatsApp</div>
-            <div class="text-pearl text-sm underline decoration-rose-light/40 underline-offset-2">+63-962-3971104</div>
-          </div>
-        </a>
-
-        <div class="metric-pill rounded-2xl p-5 flex items-center gap-3">
-          <span class="w-2.5 h-2.5 rounded-full bg-rose-light flex-shrink-0" style="animation: softPulse 2s infinite"></span>
-          <div>
-            <div class="text-pearl text-sm font-medium">Available for new clients</div>
-            <div class="text-pearl/65 text-xs">Open to bookkeeping & accounting roles</div>
+            <div class="text-navy text-sm font-bold">Available for new clients</div>
+            <div class="text-ink-mute text-xs">Open to US bookkeeping &amp; accounting roles</div>
           </div>
         </div>
       </div>
 
       <!-- Form -->
-      <form data-aos="fade-left" class="soft-card rounded-3xl p-6 sm:p-8 space-y-5" onsubmit="handleFormSubmit(event)">
+      <form data-aos="fade-left" class="bg-mist rounded-3xl p-6 md:p-8 space-y-4" onsubmit="handleFormSubmit(event)">
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-[10px] text-pearl/65 uppercase tracking-widest mb-2">Full Name</label>
-            <input type="text" required placeholder="Your name"
-              class="rose-input w-full rounded-xl px-4 py-3.5 text-pearl placeholder-pearl/35 text-sm border border-rose/20"
-              style="background:rgba(26,16,22,0.55)" />
+            <label class="block text-navy text-[10px] font-bold uppercase tracking-widest mb-1.5">Full Name</label>
+            <input type="text" required placeholder="Your name" class="form-input" />
           </div>
           <div>
-            <label class="block text-[10px] text-pearl/65 uppercase tracking-widest mb-2">Email</label>
-            <input type="email" required placeholder="you@company.com"
-              class="rose-input w-full rounded-xl px-4 py-3.5 text-pearl placeholder-pearl/35 text-sm border border-rose/20"
-              style="background:rgba(26,16,22,0.55)" />
+            <label class="block text-navy text-[10px] font-bold uppercase tracking-widest mb-1.5">Email</label>
+            <input type="email" required placeholder="you@company.com" class="form-input" />
           </div>
         </div>
         <div>
-          <label class="block text-[10px] text-pearl/65 uppercase tracking-widest mb-2">Business Name</label>
-          <input type="text" placeholder="Your company"
-            class="rose-input w-full rounded-xl px-4 py-3.5 text-pearl placeholder-pearl/35 text-sm border border-rose/20"
-            style="background:rgba(26,16,22,0.55)" />
+          <label class="block text-navy text-[10px] font-bold uppercase tracking-widest mb-1.5">Business Name</label>
+          <input type="text" placeholder="Your company" class="form-input" />
         </div>
         <div>
-          <label class="block text-[10px] text-pearl/65 uppercase tracking-widest mb-2">Message</label>
-          <textarea required rows="5" placeholder="Tell Richelle about your books, role, or project…"
-            class="rose-input w-full rounded-xl px-4 py-3.5 text-pearl placeholder-pearl/35 text-sm border border-rose/20 resize-none"
-            style="background:rgba(26,16,22,0.55)"></textarea>
+          <label class="block text-navy text-[10px] font-bold uppercase tracking-widest mb-1.5">Message</label>
+          <textarea required rows="5" placeholder="Tell Richelle about your books, role, or project…" class="form-input resize-none"></textarea>
         </div>
-        <button type="submit" class="btn-rose w-full py-4 rounded-xl text-xs tracking-widest uppercase flex items-center justify-center gap-2">
+        <button type="submit" class="btn-grad w-full py-3.5 rounded-full inline-flex items-center justify-center gap-2">
           <i data-lucide="send" class="w-4 h-4"></i>
           Schedule Financial Consultation
         </button>
-        <p id="formMsg" class="text-center text-rose-light text-sm hidden">Message noted — Richelle will be in touch soon. ♡</p>
+        <p id="formMsg" class="text-center text-leaf text-sm font-bold hidden">Thank you — Richelle will be in touch soon.</p>
       </form>
     </div>
   </div>
 </section>
 
 
-<footer class="border-t border-rose/10 py-10 px-5 md:px-8">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-    <div class="text-center md:text-left">
-      <div class="font-display text-lg text-pearl">Richelle Blessy Baluca</div>
-      <div class="text-pearl/60 text-xs tracking-widest">CPA Track · Senior Accountant</div>
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-navy text-white/80 py-12 px-5 md:px-8">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+    <div>
+      <h4 class="text-white font-extrabold text-xs tracking-[0.15em] uppercase mb-4">More About</h4>
+      <p class="text-sm leading-relaxed">
+        Richelle Blessy Baluca is a CPA Track Senior Accountant delivering precision bookkeeping and financial reporting for US businesses — with accuracy, clarity, and care.
+      </p>
     </div>
-    <div class="flex gap-6 text-[10px] text-pearl/55 uppercase tracking-widest">
-      <a href="#story" class="hover:text-rose-light transition-colors">Story</a>
-      <a href="#journey" class="hover:text-rose-light transition-colors">Journey</a>
-      <a href="#contact" class="hover:text-rose-light transition-colors">Contact</a>
+    <div>
+      <h4 class="text-white font-extrabold text-xs tracking-[0.15em] uppercase mb-4">Keep Connected</h4>
+      <ul class="space-y-3 text-sm">
+        <li>
+          <a href="mailto:richelleblessybaluca0919@gmail.com" class="inline-flex items-center gap-2.5 hover:text-leaf transition-colors">
+            <i data-lucide="mail" class="w-4 h-4"></i> Send Us a Message
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/639623971104" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 hover:text-leaf transition-colors">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="inline-flex items-center gap-2.5 hover:text-leaf transition-colors">
+            <i data-lucide="linkedin" class="w-4 h-4"></i> Follow Us
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="text-pearl/45 text-xs">© 2024 Richelle Blessy Baluca</div>
+    <div>
+      <h4 class="text-white font-extrabold text-xs tracking-[0.15em] uppercase mb-4">Contact Information</h4>
+      <ul class="space-y-2 text-sm">
+        <li class="flex gap-2"><i data-lucide="map-pin" class="w-4 h-4 flex-shrink-0 mt-0.5"></i> Quezon City, Philippines</li>
+        <li class="flex gap-2"><i data-lucide="phone" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
+          <a href="https://wa.me/639623971104" target="_blank" rel="noopener noreferrer" class="underline hover:text-leaf">+63-962-3971104</a>
+        </li>
+        <li class="flex gap-2"><i data-lucide="mail" class="w-4 h-4 flex-shrink-0 mt-0.5"></i>
+          <a href="mailto:richelleblessybaluca0919@gmail.com" class="underline hover:text-leaf break-all">richelleblessybaluca0919@gmail.com</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-10 pt-6 border-t border-white/10 text-center text-xs text-white/50">
+    © 2026 Richelle Blessy Baluca. All Rights Reserved.
   </div>
 </footer>
 
-<!-- Floating scroll to top -->
+
 <button id="scrollTopBtn" type="button" aria-label="Scroll to top">
-  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  <i data-lucide="chevrons-up" class="w-5 h-5"></i>
 </button>
 
 
 <script>
-  // Smooth scroll — Lenis (buttery, 21st.dev-like feel)
-  const lenis = new Lenis({
-    duration: 1.35,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-  });
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic', offset: 60 });
+  AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic', offset: 50 });
   lucide.createIcons();
 
-  // Mobile menu
   document.getElementById('menuBtn').addEventListener('click', () => {
     document.getElementById('mobileMenu').classList.toggle('hidden');
   });
@@ -984,44 +949,28 @@
     document.getElementById('mobileMenu').classList.add('hidden');
   }
 
-  // Scroll progress + scroll-to-top
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement.scrollHeight - window.innerHeight;
-    document.getElementById('scrollProgress').style.width = (window.scrollY / h * 100) + '%';
-    scrollTopBtn.classList.toggle('show', window.scrollY > 420);
-  });
-  scrollTopBtn.addEventListener('click', () => {
-    if (typeof lenis !== 'undefined' && lenis.scrollTo) {
-      lenis.scrollTo(0, { duration: 1.2 });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  });
-
-  // Sticky scroll reveal (21st.dev / Aceternity style)
-  const items = document.querySelectorAll('.sticky-item');
-  const visuals = [0,1,2,3].map(i => document.getElementById('vis' + i));
-
-  function updateSticky() {
-    if (window.innerWidth < 900) {
-      items.forEach(el => el.classList.add('active'));
-      return;
-    }
-    let active = 0;
-    const mid = window.innerHeight * 0.45;
-    items.forEach((el, i) => {
-      const r = el.getBoundingClientRect();
-      if (r.top <= mid) active = i;
+  const sections = ['about', 'experience', 'contact'];
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  function setActiveNav() {
+    let current = 'hero';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= 120) current = id;
     });
-    items.forEach((el, i) => el.classList.toggle('active', i === active));
-    visuals.forEach((v, i) => {
-      if (!v) return;
-      v.classList.toggle('active', i === active);
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   }
-  window.addEventListener('scroll', updateSticky, { passive: true });
-  updateSticky();
+  window.addEventListener('scroll', setActiveNav, { passive: true });
+  setActiveNav();
+
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   function handleFormSubmit(e) {
     e.preventDefault();
