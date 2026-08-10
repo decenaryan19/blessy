@@ -228,32 +228,6 @@
       flex-shrink: 0;
     }
 
-    .tool-brand-icon {
-      width: 1rem;
-      height: 1rem;
-      flex-shrink: 0;
-      object-fit: contain;
-    }
-
-    .intro-video-wrap {
-      border: 1px solid #E5EAF0;
-      background: #000;
-      overflow: hidden;
-      box-shadow: 0 16px 40px rgba(11, 44, 92, 0.12);
-      border-radius: 1rem;
-      max-width: 720px;
-      margin: 0 auto;
-      line-height: 0;
-    }
-    .intro-video-wrap video {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 16 / 9;
-      object-fit: contain;
-      background: #000;
-    }
-
     .practice-card {
       background: #EEF1F4;
       border-radius: 1.25rem;
@@ -555,7 +529,7 @@
         <div class="lbl">Accuracy Focus</div>
       </div>
       <div class="metric-box" data-aos="fade-up" data-aos-delay="120">
-        <div class="num">6+</div>
+        <div class="num">4+</div>
         <div class="lbl">Industries</div>
       </div>
       <div class="metric-box" data-aos="fade-up" data-aos-delay="180">
@@ -570,15 +544,6 @@
     <p class="text-ink-mute text-base md:text-lg leading-relaxed">
       I’m <strong class="text-navy">Richelle Blessy Baluca</strong>, a US Bookkeeper and Senior Accountant with 3+ years of experience transforming complex financial ledgers into accurate, audit-ready accounts and scalable business insights for US clients.
     </p>
-  </div>
-
-  <div class="max-w-3xl mx-auto mb-16 md:mb-20 px-5 md:px-0" data-aos="fade-up">
-    <div class="intro-video-wrap">
-      <video controls playsinline preload="metadata" poster="intro-poster.jpg">
-        <source src="intro.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
   </div>
 
   <!-- Why Hire -->
@@ -776,28 +741,31 @@
     <h3 class="section-title text-center text-base mt-14 mb-6" data-aos="fade-up">Tools &amp; Platforms</h3>
     <div class="flex flex-wrap justify-center gap-3 mb-16 md:mb-20" data-aos="fade-up">
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/quickbooks.svg" alt="" class="tool-brand-icon" /> QuickBooks
+        <i data-lucide="calculator" class="w-4 h-4 text-leaf"></i> QuickBooks
       </span>
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/excel.svg" alt="" class="tool-brand-icon" /> MS Excel
+        <i data-lucide="table" class="w-4 h-4 text-leaf"></i> MS Excel
       </span>
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/google.svg" alt="" class="tool-brand-icon" /> Google Suite
+        <i data-lucide="mail" class="w-4 h-4 text-leaf"></i> Google Suite
       </span>
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/slack.svg" alt="" class="tool-brand-icon" /> Slack
+        <i data-lucide="message-square" class="w-4 h-4 text-leaf"></i> Slack
       </span>
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/trello.svg" alt="" class="tool-brand-icon" /> Trello
+        <i data-lucide="trello" class="w-4 h-4 text-leaf"></i> Trello
       </span>
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/canva.svg" alt="" class="tool-brand-icon" /> Canva
+        <i data-lucide="image" class="w-4 h-4 text-leaf"></i> Canva
+      </span>
+      <!-- <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <img src="bootstrap-icon.png" alt="" class="w-4 h-4 rounded-sm object-cover" /> Bootstrap
+      </span> -->
+      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
+        <i data-lucide="bot" class="w-4 h-4 text-leaf"></i> ChatGPT
       </span>
       <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/openai.svg" alt="" class="tool-brand-icon" /> ChatGPT
-      </span>
-      <span class="inline-flex items-center gap-2 bg-white border border-[#D5DCE5] rounded-full px-4 py-2 text-sm text-navy font-semibold">
-        <img src="icons/claude.svg" alt="" class="tool-brand-icon" /> Claude
+        <i data-lucide="sparkles" class="w-4 h-4 text-leaf"></i> Claude
       </span>
     </div>
 
@@ -806,7 +774,7 @@
     <p class="text-center text-ink-mute max-w-2xl mx-auto mb-12 text-sm md:text-base leading-relaxed" data-aos="fade-up">
       Delivering precision financial management across diverse sectors with industry-specific bookkeeping expertise.
     </p>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 max-w-5xl mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-10 max-w-3xl mx-auto">
       <div class="text-center" data-aos="fade-up">
         <div class="icon-circle"><i data-lucide="building-2" class="w-8 h-8"></i></div>
         <div class="industry-label">Real Estate</div>
@@ -816,19 +784,19 @@
         <div class="industry-label">Manufacturing</div>
       </div>
       <div class="text-center" data-aos="fade-up" data-aos-delay="120">
-        <div class="icon-circle"><i data-lucide="wrench" class="w-8 h-8"></i></div>
+        <div class="icon-circle"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
         <div class="industry-label">Services</div>
       </div>
       <div class="text-center" data-aos="fade-up" data-aos-delay="180">
         <div class="icon-circle"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
         <div class="industry-label">Non-Profit</div>
       </div>
-      <div class="text-center" data-aos="fade-up" data-aos-delay="240">
-        <div class="icon-circle"><i data-lucide="truck" class="w-8 h-8"></i></div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="180">
+        <div class="icon-circle"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
         <div class="industry-label">Logistics</div>
       </div>
-      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
-        <div class="icon-circle"><i data-lucide="scale" class="w-8 h-8"></i></div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="180">
+        <div class="icon-circle"><i data-lucide="heart-handshake" class="w-8 h-8"></i></div>
         <div class="industry-label">Professional Service</div>
       </div>
     </div>
